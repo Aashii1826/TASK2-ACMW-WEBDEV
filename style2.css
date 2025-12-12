@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+:root{
+    --primary-color:rgb(205, 24, 24) ;
+    --secondary-color: rgb(255, 111, 0);
+    --dark-color: rgb(156, 2, 2);
+}
+body{
+    font-family: 'Lato',sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+.flex{
+    display: flex;
+    justify-content: center; /*centers them horizontally*/
+    align-items: center; /*centers them vertically*/
+    height: 100%;
+    color: antiquewhite;
+}
+.navbar{ 
+    background-color: var(--primary-color);
+    color:orange ;
+    height: 60px;
+}
+.navbar .flex{ /* only applies when flex is in navbar */
+    justify-content: space-between;
+}
+.navbar ul{ /* makes ul inside navbar behave like flex */
+    display: flex;
+}
+.navbar a{
+    color:blanchedalmond;
+    padding: 15px;
+    margin: 0 5px;
+}
+.navbar a:hover{
+    border-bottom: 2px #fff solid;
+}
+.showcase{
+    height: 400px;
+    background-color:rgb(142, 13, 43) ;
+    color: chocolate;
+    position: relative;
+}
+.intro{
+    color: brown;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    justify-content: center; /*aligns them horizontally center*/
+    align-items: center;  /*aligns them vertically center*/
+    padding: 20px;
+} 
+.container .grid{
+    padding: 50px;
+}
+.showcase-text{
+    color: chocolate;
+}
+.showcase h2{
+    font-size: 40px;
+    justify-content: center; /*aligns them horizontally center*/
+    align-items: center; 
+}
+.showcase-img{
+    width: 100%;      /* takes full width of the grid column */
+    max-width: 400px; /* controls how LARGE the image can be */
+    height: auto;     /* keeps the image from stretching */
+    border-radius: 10px;
+}
+.heading{
+    padding: 10px;
+    color: var(--dark-color);
+}
+.img-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 20px;
+    padding: 20px;
+}
+
+.img-gallery .card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Resize all images equally */
+.img-gallery .card img {
+    width: 100%;
+    height: 200px;      /* SAME HEIGHT for all images */
+    object-fit: cover;  /* prevents distortion, crops nicely */
+    border-radius: 8px;
+}
+.grid-3 {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;          /* Remove big empty space */
+}
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--secondary-color);
+}
+.social a {
+    color: var(--dark-color); 
+    margin: 0 10px;
+}
+.about-2 ul{
+    padding: 10px;
+    list-style: disc;
+    margin-left: 20px
+}
+.about{
+    padding: 20px;
+    color: red;
+    background-color: antiquewhite;
+}
+.about-2{
+    padding: 20px;
+    color: orangered;
+    background-color: antiquewhite;
+}
+.about-3{
+    padding: 20px;
+    color: rgb(169, 126, 9);
+    background-color: antiquewhite;
+}
+.card{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    justify-content: center; /*aligns them horizontally center*/
+    align-items: center;  /*aligns them vertically center*/
+
+}
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+.showcase .grid{
+    overflow: visible;
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+}
+.showcase-form{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    z-index: 100; /*controls the stacking order. An element with z-index: 100 will appear above any element with a lower z-index. */
+    justify-self: flex-end; /*aligns item to right */
+    font-weight: 500;
+    font-display: block;
+}
+.showcase-form input[type='text'],
+.showcase-form input[type='email']{
+    border: 1px;
+    border-bottom: 1px solid #000000;
+    width: 100%;
+    padding: 1px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.showcase-form input:focus{
+    outline: none;
+}
+.showcase::before,
+.showcase::after{
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: rgb(222, 141, 91);
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+    padding-bottom: 40px
+
+}
+.btn {
+    display: inline-block;
+    padding: 10px 30px ;
+    cursor: pointer;
+    background: var(--primary-color) ;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.btn .btn-outline{
+    background-color: transparent;
+    border: 1px white;
+}
+.btn:hover{
+    transform: scale(0.95);
+}
+.container .grid{
+    padding: 50px;
+}
+.showcase-text1{
+    color: yellow;
+}
+footer {
+    background-color: var(--secondary-color); /* your orange */
+    padding: 40px 0;
+}
